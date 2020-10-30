@@ -58,6 +58,40 @@ variable "instance_type" {
   type    = string
 }
 
+# EBS
+# EBS device name
+variable "ebs_device_name" {
+  description = "The device name of the EBS volume"
+  default = "/dev/sdc"
+}
+
+# SSD Type of disk
+variable "ssd_type" {
+  description = "The type of the SSD Disk."
+  # Two different types of EBS
+  # instance_type = "gp2"
+  # instance_type = "io2"
+  default = "io2"
+}
+
+# SSD size
+variable "ssd_size" {
+  description = "The size of the SSD volume in GB."
+  default = 100
+}
+
+# SSD size
+variable "ssd_iops" {
+  description = "The iops for volume."
+  default = 2500
+}
+
+# EBS size
+variable "ebs_size" {
+  description = "The size of the EBS volume in GB."
+  default = 100
+}
+
 # VPC
 variable "public_cidrblock" {
   description = "Public CIDR block"
@@ -73,7 +107,7 @@ variable "vpc_cidr_block" {
 # Name of the Cluster
 variable "cluster_name" {
   description = "The name to the cluster"
-  default     = "test"
+  default     = "cone"
   type        = string
 }
 
@@ -81,7 +115,7 @@ variable "cluster_name" {
 variable "user_name" {
   description = "Desired name for AWS IAM User"
   type        = string
-  default     = "test-edb-iam-postgres"
+  default     = "cone-edb-iam-postgres"
 }
 
 # IAM Force Destroy

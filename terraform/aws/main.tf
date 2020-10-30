@@ -70,6 +70,11 @@ module "edb-db-cluster" {
   synchronicity                       = var.synchronicity
   cluster_name                        = var.cluster_name
   instance_type                       = var.instance_type
+  ebs_device_name                     = var.ebs_device_name
+  ssd_type                            = var.ssd_type
+  ssd_size                            = var.ssd_size
+  ebs_size                            = var.ebs_size
+  ssd_iops                            = var.ssd_iops
   ansible_pem_inventory_yaml_filename = var.ansible_pem_inventory_yaml_filename
   os_csv_filename                     = var.os_csv_filename
   add_hosts_filename                  = var.add_hosts_filename
